@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesomw -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="w-screen h-screen flex flex-col justify-center items-center gap-5 bg-blue-900 overflow-hidden">
+
+    <h1 class="font-['Kanit', sans-serif] font-bold text-xl text-white relative ">Weather App</h1>
+
+    <main class="flex justify-center items-center">
+        <div class="min-w-[340px] h-[120px] bg-white rounded-3xl p-8 overflow-hidden" id="container">
+            <div class="w-full h-[60px] flex justify-between items-center">
+                <span class="material-icons">location_on</span>
+                <input class="w-44 outline-none " type="text" id="search-input" placeholder="Enter Your Location">
+                <div class="w-[50px] h-[50px] flex justify-center items-center rounded-full bg-blue-950 cursor-pointer" id="search-btn"><span class="material-icons text-white pointer-events-none">search</span></div>
+            </div>
+            <div class="w-full">
+                <div class="flex-col items-center mt-5 hidden" id="not-found">
+                    <h2 class="capitalize">Oops. Invalid location!</h2>
+                    <img src="images/World-pana.svg" alt="">
+                    <a class="text-[.5rem] relative -top-[50px] -left-1 text-white" href="https://storyset.com/travel">Travel illustrations by Storyset</a>
+                </div>
+                <div class="flex flex-col items-center gap-6 pt-10">
+                    <img class="w-[90px] m-auto " src="" alt="" id="condition-icon">
+                    <div class="flex flex-col justify-center items-center gap-2">
+                        <p class="text-6xl font-bold text-[rgb(32,36,75)]" id="temperature"></p>
+                        <p class=" text-[rgb(32,36,75)] font-semibold text-xl" id="description"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="z-50 relative top-[15%] left-[35%]" id="loading-icon"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i><span class="sr-only">Loading...</span></div>
+            <div class="justify-between items-center mt-10 hidden" id="weather-info">
+                <div class="flex items-center gap-1">
+                    <span class="material-icons text-3xl">water</span>
+                    <div class="flex flex-col justify-start">
+                        <p class="font-bold text-xl" id="humidity"></p>
+                        <p class="-mt-1 text-[0.8rem] font-medium">Humidity</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="material-icons text-3xl">air</span>
+                    <div class="flex flex-col justify-start">
+                        <p class="font-bold text-xl" id="wind-speed"></p>
+                        <p class="-mt-1 text-[0.8rem] font-medium">Wind speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
